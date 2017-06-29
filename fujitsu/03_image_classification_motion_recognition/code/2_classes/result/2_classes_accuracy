@@ -1,0 +1,8 @@
+Time usage: 0:36:03
+Accuracy on Test-Set: 94.5% (1889 / 2000)
+Example errors:
+Confusion Matrix: N/A
+Accuracy for each class: 
+{0: 0.919, 1: 0.97}
+{u'static': 0.97, u'dynamic': 0.919}
+
