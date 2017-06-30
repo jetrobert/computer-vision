@@ -1,0 +1,9 @@
+Saved checkpoint.
+Time usage: 0:36:18
+Accuracy on Test-Set: 65.3% (515 / 789)
+Example errors:
+Confusion Matrix: N/A
+Accuracy for each class: 
+{0: 0.8037974683544303, 1: 0.6587837837837838, 2: 0.22093023255813954, 3: 0.5164835164835165}
+{u'D02WalkingQuickly': 0.8038, u'D05UpstairsSlowly': 0.5165, u'D04JogingQuickly': 0.6588, u'D05DownstairsSlowly': 0.2209}
+
