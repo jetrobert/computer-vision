@@ -1,0 +1,10 @@
+Saved checkpoint.
+Time usage: 0:36:18
+Accuracy on Test-Set: 35.6% (57 / 160)
+Example errors:
+Confusion Matrix: N/A
+Accuracy for each class: 
+{0: 0.47368421052631576, 1: 1.0, 2: 0.0, 3: 0.07692307692307693, 4: 0.4, 5: 0.0, 6: 0.5, 7: 0.0, 8: 0.35, 9: 0.15}
+{u'D18Stumble': 0.0, u'D14LyBack': 0.4, u'D19Jump': 0.35, u'D1213Sit': 0.15, u'D02WalkingQuickly': 0.4737, u'D04JogingQuickly': 1.0, u'D15Standing': 0.5, u'D06UpstairsQuickly': 0.0769, u'D06DownstairsQuickly': 0.0, u'D14LyLateral': 0.0}
+stephen@DE0978:~/Desktop/motion_recog/code/10_classes$ 
+
