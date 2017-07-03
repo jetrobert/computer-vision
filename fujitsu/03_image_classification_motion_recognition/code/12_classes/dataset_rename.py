@@ -14,8 +14,9 @@ def file_rename(path, label_num):
 			
 if __name__ == '__main__':
 	label_names = ['D02WalkingQuickly', 'D04JogingQuickly', 'D06DownstairsQuickly', 
-				   'D06UpstairsQuickly', 'D14LyBack', 'D14LyLateral', 'D15Standing', 
-				   'D18Stumble', 'D19Jump', 'D1213Sit']
+				   'D06UpstairsQuickly', 'D10LowSitDownQuickly', 'D10LowSitUpQuickly', 
+				   'D14LyBack', 'D14LyLateral', 'D15Standing', 'D18Stumble', 'D19Jump', 
+				   'D1213Sit']
 	for label_num in range(len(label_names)):
-		path = '../../dataset/10_classes/dataset_process/'+label_names[label_num]+'/'
+		path = '../../dataset/12_classes/dataset_process/'+label_names[label_num]+'/'
 		file_rename(path, label_num)

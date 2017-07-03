@@ -10,8 +10,6 @@ def file_move(path, path_train, path_test, label_num):
 	# randomly choose test data
 	for num_ in random_num:
 		file = path+str(label_num)+'_'+str(num_)+'.jpg'
-		if not os.path.isdir(path_test):
-			os.makedirs(path_test)
 		shutil.move(file, path_test)
 		print "move %s to %s successful" % (file, path_test)
 		
@@ -20,31 +18,16 @@ def file_move(path, path_train, path_test, label_num):
 		#print(name)
 		if os.path.isfile(path+name):     
 			#shutil.copy(path+name, path_target)
-			if not os.path.isdir(path_train):
-				os.makedirs(path_train)
 			shutil.move(path+name, path_train)
 			print "move %s to %s successful" % (name, path_train)
-
-def partiton(path_train, path_test):		
-	# make train:test = 6:1
-	file_train_num = len(os.listdir(path_train))
-	file_test_num = len(os.listdir(path_test))
-	file_total_num = file_train_num + file_test_num
-	if file_total_num > file_test_num * 6:
-		for i in range((file_total_num-file_test_num*6)/6):
-			shutil.move(path_train+'/'+os.listdir(path_train)[i], path_test)
-	elif file_total_num < file_test_num * 6:
-		for i in range((file_test_num*6-file_total_num)/6):
-			shutil.move(path_test+'/'+os.listdir(path_test)[i], path_train)
 			
 if __name__ == '__main__':
 	label_names = ['D02WalkingQuickly', 'D04JogingQuickly', 'D06DownstairsQuickly', 
-				   'D06UpstairsQuickly', 'D14LyBack', 'D14LyLateral', 'D15Standing', 
-				   'D18Stumble', 'D19Jump', 'D1213Sit']
+				   'D06UpstairsQuickly', 'D10LowSitDownQuickly', 'D10LowSitUpQuickly', 
+				   'D14LyBack', 'D14LyLateral', 'D15Standing', 'D18Stumble', 'D19Jump', 
+				   'D1213Sit']
 	for label_num in range(len(label_names)):
-		path = '../../dataset/10_classes/dataset_rename/'+label_names[label_num]+'/'
-		path_train = '../../dataset/10_classes/dataset_train'
-		path_test = '../../dataset/10_classes/dataset_test'
+		path = '../../dataset/12_classes/dataset_rename/'+label_names[label_num]+'/'
+		path_train = '../../dataset/12_classes/dataset_train'
+		path_test = '../../dataset/12_classes/dataset_test'
 		file_move(path, path_train, path_test, label_num)
-	partiton(path_train, path_test)
-		

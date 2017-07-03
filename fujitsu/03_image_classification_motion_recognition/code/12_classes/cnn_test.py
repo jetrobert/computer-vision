@@ -85,6 +85,7 @@ def main_network(images, training):
             flatten().\
             fully_connected(size=256, name='layer_fc1').\
             fully_connected(size=128, name='layer_fc2').\
+			fully_connected(size=12, name='layer_fc3').\
             softmax_classifier(num_classes, labels=y_true)
     return y_pred, loss
 
@@ -121,12 +122,12 @@ saver = tf.train.Saver()
 
 session = tf.Session()
 
-save_dir = '../../dataset/10_classes/checkpoints/'
+save_dir = '../../dataset/12_classes/checkpoints/'
 
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
-save_path = save_dir + 'motion_recog_cnn'
+save_path = save_dir + 'motion_recognition_cnn'
 
 try:
     print("Trying to restore last checkpoint ...")

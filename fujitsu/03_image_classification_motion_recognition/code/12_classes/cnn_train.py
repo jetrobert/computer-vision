@@ -21,8 +21,8 @@ class_names = load_data.load_class_names()
 
 # load train data
 #images_train---images
-#cls_train---int(0-9)
-#labels_train---labels([0,0,0,0,0,0,1,0,0,0])
+#cls_train---int(0-12)
+#labels_train---labels([0,0,0,0,0,0,1,0,0,0,0,0])
 images_train, cls_train, labels_train = load_data.load_training_data()
 
 # load test data
@@ -32,10 +32,10 @@ images_test, cls_test, labels_test = load_data.load_test_data()
 img_size_cropped = 24
 
 
-# tf placeholder
+# x placeholder
 x = tf.placeholder(tf.float32, shape=[None, img_size, img_size, num_channels], name='x')
 
-# lable placeholder
+# label placeholder
 y_true = tf.placeholder(tf.float32, shape=[None, num_classes], name='y_true')
 
 # each in y_true array < 1, 
@@ -82,11 +82,11 @@ def pre_process(images, training):
     return images
 
 
-# get trained dataset
+# distort images
 distorted_images = pre_process(images=x, training=True)
 
 
-# bulid two layers conv with Pretty Tensor framework
+# design two conv layers with Pretty Tensor framework
 def main_network(images, training):
     # Wrap the input images as a Pretty Tensor object.
     x_pretty = pt.wrap(images)
@@ -108,6 +108,7 @@ def main_network(images, training):
             flatten().\
             fully_connected(size=256, name='layer_fc1').\
             fully_connected(size=128, name='layer_fc2').\
+	    fully_connected(size=12, name='layer_fc3').\
             softmax_classifier(num_classes, labels=y_true)
     return y_pred, loss
 
@@ -125,20 +126,20 @@ def create_network(training):
     return y_pred, loss
 
 
-# set step trainable=False mean no optimization
+# set trainable=False means no optimization
 global_step = tf.Variable(initial_value=0,
                           name='global_step', trainable=False)
 
 # obtain loss value
 _, loss = create_network(training=True)
 
-# calculate loss 
+# optimization
 optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(loss, global_step=global_step)
 
 # create test network and return prediction results
 y_pred, _ = create_network(training=False)
 
-# calculate pred results
+# calculate prediction results
 y_pred_cls = tf.argmax(y_pred, dimension=1)
 
 
@@ -153,12 +154,12 @@ saver = tf.train.Saver()
 session = tf.Session()
 
 # save trained network 
-save_dir = '../../dataset/10_classes/checkpoints/'
+save_dir = '../../dataset/12_classes/checkpoints/'
 
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 	
-save_path = save_dir + 'motion_recog_cnn'
+save_path = save_dir + 'motion_recognition_cnn'
 
 session.run(tf.global_variables_initializer())
 
@@ -303,7 +304,7 @@ def plot_confusion_matrix(cls_pred):
 # Split the data-set in batches of this size to limit RAM usage.
 batch_size = 256
 
-# cal image prediction class 
+# predict class 
 def predict_cls(images, labels, cls_true):
     # Number of images.
     num_images = len(images)
