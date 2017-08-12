@@ -1,9 +1,0 @@
-Time usage: 0:36:19
-Accuracy on Test-Set: 43.9% (659 / 1500)
-Example errors:
-Confusion Matrix: N/A
-Accuracy for each class: 
-{0: 0.25333333333333335, 1: 0.4666666666666667, 2: 0.9466666666666667, 3: 0.22, 4: 0.31}
-{u'D01WalkingSlowly': 0.2533, u'D02WalkingQuickly': 0.4667, u'D05UpstairsSlowly': 0.31, u'D04JogingQuickly': 0.9467, u'D05DownstairsSlowly': 0.22}
-stephen@DE0978:~/Desktop/motion_recog/code/5_classes$ 
-
