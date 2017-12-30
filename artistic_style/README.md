@@ -12,7 +12,7 @@ hyperparameter tuning to get nice results.
 **See [here][lengstrom-fast-style-transfer] for an implementation of [fast
 (feed-forward) neural style][fast-neural-style] in TensorFlow.**
 
-## Running
+##Running
 
 `python neural_style.py --content <content file> --styles <style file> --output <output file>`
 
