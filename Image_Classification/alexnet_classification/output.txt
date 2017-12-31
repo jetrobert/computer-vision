@@ -1,0 +1,15 @@
+alexnet_forward_newtf.py
+
+('Image', 0)
+('weasel', 0.5031746)
+('black-footed ferret, ferret, Mustela nigripes', 0.26326412)
+('polecat, fitch, foulmart, foumart, Mustela putorius', 0.1477468)
+('mink', 0.0649518)
+('otter', 0.0077195643)
+('Image', 1)
+('clumber, clumber spaniel', 0.25895226)
+('komondor', 0.16584532)
+('miniature poodle', 0.14951803)
+('toy poodle', 0.098471738)
+('kuvasz', 0.084805809)
+0.425408840179
