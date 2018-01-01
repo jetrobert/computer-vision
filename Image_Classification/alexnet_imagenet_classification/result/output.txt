@@ -1,0 +1,5 @@
+002689.jpg: moving van
+----
+005525.jpg: garbage truck, dustcart
+----
+000018.jpg: drilling platform, offshore rig
