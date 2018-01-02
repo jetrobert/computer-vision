@@ -1,0 +1,9 @@
+image_classification.py
+
+Probability 1.00 => [school bus]
+Probability 0.00 => [minibus]
+Probability 0.00 => [passenger car, coach, carriage]
+Probability 0.00 => [trolleybus, trolley coach, trackless trolley]
+Probability 0.00 => [cab, hack, taxi, taxicab]
+
+
